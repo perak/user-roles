@@ -1,10 +1,10 @@
 Package.describe({
 	summary: "User roles package for Meteor",
-	version: "1.0.2",
+	version: "1.0.3",
 	git: "https://github.com/perak/user-roles.git"
 });
 
-Package.onUse(function(api) {
+Package.on_use(function(api) {
 	api.add_files('both/collections/users.js', ['client', 'server']);
 	api.add_files('client/helpers.js', 'client');
 	api.add_files('server/collections/users.js', 'server');
