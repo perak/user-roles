@@ -1,6 +1,6 @@
 Package.describe({
 	summary: "User roles package for Meteor",
-	version: "1.0.5",
+	version: "1.0.6",
 	git: "https://github.com/perak/user-roles.git"
 });
 
@@ -8,6 +8,8 @@ Package.describe({
 if(!Package.onUse) Package.onUse = Package.on_use;
 
 Package.onUse(function(api) {
+	api.versionsFrom('METEOR@0.8.0');
+
 	api.use('underscore');
 	api.use('templating');
 
