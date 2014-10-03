@@ -1,6 +1,6 @@
 Package.describe({
 	summary: "User roles package for Meteor",
-	version: "1.0.9",
+	version: "1.0.10",
 	git: "https://github.com/perak/user-roles.git"
 });
 
