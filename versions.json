@@ -2,11 +2,11 @@
   "dependencies": [
     [
       "blaze",
-      "1.0.0"
+      "1.0.3"
     ],
     [
       "deps",
-      "1.0.0"
+      "1.0.1"
     ],
     [
       "ejson",
@@ -18,7 +18,7 @@
     ],
     [
       "htmljs",
-      "1.0.0-cordova1"
+      "1.0.0"
     ],
     [
       "id-map",
@@ -38,7 +38,7 @@
     ],
     [
       "minimongo",
-      "1.0.0"
+      "1.0.1"
     ],
     [
       "observe-sequence",
@@ -58,7 +58,7 @@
     ],
     [
       "ui",
-      "1.0.1-rc0"
+      "1.0.0"
     ],
     [
       "underscore",
@@ -66,6 +66,6 @@
     ]
   ],
   "pluginDependencies": [],
-  "toolVersion": "meteor-tool@1.0.26",
+  "toolVersion": "meteor-tool@1.0.33",
   "format": "1.0"
 }
