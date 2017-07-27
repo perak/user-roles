@@ -1,9 +1,9 @@
 {
-  "name": "user-roles",
+  "name": "perak:user-roles",
   "description": "User roles package for Meteor",
   "homepage": "https://github.com/perak/user-roles",
-  "author": "Petar Korponaic",
-  "version": "1.0.11",
+  "author": "Petar Korponaić",
+  "version": "1.0.12",
   "git": "https://github.com/perak/user-roles.git",
   "packages": {}
 }
