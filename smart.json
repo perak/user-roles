@@ -3,7 +3,7 @@
   "description": "User roles package for Meteor",
   "homepage": "https://github.com/perak/user-roles",
   "author": "Petar Korponaić",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "git": "https://github.com/perak/user-roles.git",
   "packages": {}
 }
