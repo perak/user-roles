@@ -1,3 +1,34 @@
+var _mergeObjects = function(target, source) {
+
+	/* Merges two (or more) objects,
+	giving the last one precedence */
+
+	if(typeof target !== "object") {
+		target = {};
+	}
+
+	for(var property in source) {
+
+		if(source.hasOwnProperty(property)) {
+
+			var sourceProperty = source[ property ];
+
+			if(typeof sourceProperty === 'object') {
+				target[property] = _mergeObjects(target[property], sourceProperty);
+				continue;
+			}
+
+			target[property] = sourceProperty;
+		}
+	}
+
+	for(var a = 2, l = arguments.length; a < l; a++) {
+		_mergeObjects(target, arguments[a]);
+	}
+
+	return target;
+};
+
 var _extendFilter = function(originalFilter, extraOptions) {
 	originalFilter = originalFilter || {};
 	extraOptions = extraOptions || {};
@@ -47,7 +78,7 @@ var _extendOptions = function(originalOptions, extraOptions) {
 	// sort
 	if(sortBy) {
 		addOptions.sort = {};
-		addOptions.sort[sortBy] = (typeof extraOptions.sortAscending == "undefined" || exraOptions.sortAscending) ? 1 : -1;
+		addOptions.sort[sortBy] = (typeof extraOptions.sortAscending == "undefined" || extraOptions.sortAscending) ? 1 : -1;
 	}
 
 	// skip & limit
@@ -61,11 +92,12 @@ var _extendOptions = function(originalOptions, extraOptions) {
 	var options = originalOptions;
 
 	if(!_.isEmpty(addOptions)) {
-		objectUtils.mergeObjects(options, addOptions);
+		_mergeObjects(options, addOptions);
 	}
 
 	return options;
 };
+
 
 Meteor.publish("admin_users", function() {
 	return Users.isAdmin(this.userId) ? Meteor.users.find({}, {fields: {profile: 1, roles: 1, emails: 1, stats: 1}}) : this.ready();
