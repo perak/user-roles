@@ -100,12 +100,12 @@ var _extendOptions = function(originalOptions, extraOptions) {
 
 
 Meteor.publish("admin_users", function() {
-	return Users.isAdmin(this.userId) ? Meteor.users.find({}, {fields: {profile: 1, roles: 1, emails: 1, stats: 1}}) : this.ready();
+	return Users.isAdmin(this.userId) ? Meteor.users.find({}) : this.ready();
 });
 
 Meteor.publish("admin_users_paged", function(extraOptions) {
 	extraOptions.doSkip = true;
-	return Users.isAdmin(this.userId) ? Meteor.users.find(_extendFilter({}, extraOptions), _extendOptions({fields: {profile: 1, roles: 1, emails: 1, stats: 1}}, extraOptions)) : this.ready();
+	return Users.isAdmin(this.userId) ? Meteor.users.find(_extendFilter({}, extraOptions), _extendOptions({}, extraOptions)) : this.ready();
 });
 
 Meteor.publish("admin_users_paged_count", function(extraOptions) {

@@ -9,3 +9,7 @@ Users.allow({
         		|| (doc._id === userId && !_.contains(fieldNames, 'roles'));
     }
 });
+
+Users.before.insert(function (userId, doc) {
+	if (!doc.roles) doc.roles = [];
+});
