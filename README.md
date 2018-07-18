@@ -18,11 +18,11 @@ Collection `Users` extends `Meteor.users` collection. When user is created, `rol
 
 ```javascript
 {
-	...user's document...
+	//...user's document...
 
 	roles: ["admin", "user"]
 
-	...
+	//...
 }
 
 ```
@@ -90,7 +90,7 @@ Only admins can update user roles via the client
 
 ## Global helpers
 
-### isAdmin()
+### {{isAdmin}}
 
 returns true if current user is admin
 
@@ -102,7 +102,7 @@ returns true if current user is admin
 {{/if}}
 ```
 
-### isUserInRole(role)
+### {{isUserInRole role}}
 
 returns true if current user is in given role
 
@@ -114,7 +114,7 @@ returns true if current user is in given role
 {{/if}}
 ```
 
-### isUserInRoles(roleList)
+### {{isUserInRoles [roleList]}}
 
 returns true if current user is in any of roles given as array of strings. Example:
 
