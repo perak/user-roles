@@ -14,7 +14,7 @@ Package.onUse(function(api) {
 
 	api.use('underscore');
 	api.use('templating');
-	api.use('matb33:collection-hooks');
+	api.use('matb33:collection-hooks@0.8.4');
 
 	api.add_files('both/collections/users.js', ['client', 'server']);
 	api.add_files('client/helpers.js', 'client');
